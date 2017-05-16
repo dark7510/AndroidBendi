@@ -1,0 +1,218 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ypx.com.androidbend.fragment.MyFragment">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/cardview_dark_background"
+        android:gravity="center"
+        android:text="个人中心"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/activity_horizontal_margin" />
+
+    <RelativeLayout
+        android:id="@+id/ll_login_re"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView5">
+
+        <Button
+            android:id="@+id/bt_fragment_register"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:width="1dp"
+            android:drawableLeft="@mipmap/login"
+            android:drawablePadding="15.0dip"
+            android:text="注册" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/bg_fg"
+            android:visibility="gone"
+            app:civ_border_color="#fcfbfb"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.085" />
+
+        <Button
+            android:id="@+id/bt_fragment_login"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bt_fragment_register"
+            android:layout_weight="1"
+            android:width="1dp"
+            android:drawableLeft="@mipmap/login"
+            android:drawablePadding="20.0dip"
+            android:text="登录" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ll_login_re"
+        android:layout_marginTop="25dp"
+        android:drawableLeft="@mipmap/collection3"
+        android:drawablePadding="20.0dip"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="17.0dip"
+        android:text="收藏"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_share"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        app:srcCompat="@drawable/ic_right" />
+
+    <TextView
+        android:id="@+id/tv_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="48dp"
+        android:drawableLeft="@mipmap/share"
+        android:drawablePadding="20.0dip"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="17.0dip"
+        android:text="分享"
+        android:textColor="#ff333333"
+        android:textSize="18.0sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_right"
+        android:layout_above="@+id/tv_feed_back"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:id="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/tv_feed_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_share"
+        android:layout_marginTop="48dp"
+        android:drawableLeft="@mipmap/feedbaack"
+        android:drawablePadding="20.0dip"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="17.0dip"
+        android:text="意见反馈"
+        android:textColor="#ff333333"
+        android:textSize="18.0sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_right"
+        android:layout_alignTop="@+id/tv_feed_back"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:id="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/tv_about_us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_feed_back"
+        android:layout_marginTop="48dp"
+        android:drawableLeft="@mipmap/about_us"
+        android:drawablePadding="20.0dip"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="17.0dip"
+        android:text="关于我们"
+        android:textColor="#ff333333"
+        android:textSize="18.0sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_right"
+        android:layout_above="@+id/bt_fragment_setup"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"
+        android:id="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/bt_fragment_setup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_about_us"
+        android:layout_marginTop="49dp"
+        android:drawableLeft="@mipmap/setting"
+        android:drawablePadding="20.0dip"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="17.0dip"
+        android:text="设置"
+        android:textColor="#ff333333"
+        android:textSize="18.0sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_right"
+        android:layout_alignBottom="@+id/bt_fragment_setup"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4" />
+
+
+</RelativeLayout>

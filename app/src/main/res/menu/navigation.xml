@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/news"
+        android:icon="@drawable/news"
+        android:title="@string/news" />
+    <item
+        android:id="@+id/shocjing"
+        android:icon="@drawable/shocking"
+        android:title="@string/shocking" />
+
+    <item
+        android:id="@+id/virtual_reality"
+        android:icon="@drawable/virtual_reality"
+        android:title="@string/virtual_reallity" />
+    <item
+        android:id="@+id/oneself"
+        android:icon="@drawable/oneself"
+        android:title="@string/oneself" />
+
+</menu>

@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ypx.com.androidbend.fragment.JokeFragment">
+
+    <TextView
+        android:text="笑话"
+        android:gravity="center"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/textView4" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/prg_joke"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView4" />
+
+
+</RelativeLayout>

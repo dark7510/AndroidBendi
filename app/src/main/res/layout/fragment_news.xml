@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ypx.com.androidbend.fragment.NewsFragment">
+    <TextView
+        android:text="新闻"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/cardview_dark_background"
+        android:textSize="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/textView3" />
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/list_news"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView3" />
+
+
+
+
+
+
+</RelativeLayout>
