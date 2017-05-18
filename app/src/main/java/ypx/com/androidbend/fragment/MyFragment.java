@@ -28,8 +28,7 @@ import ypx.com.androidbend.view.activity.SettingsActivity;
 public class MyFragment extends Fragment {
 
 
-    @BindView(R.id.bt_fragment_register)
-    Button btFragmentRegister;
+
     @BindView(R.id.profile_image)
     CircleImageView profileImage;
     @BindView(R.id.bt_fragment_login)
@@ -51,9 +50,11 @@ public class MyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_my, container, false);
-        unbinder = ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this,view);
         return view;
+
     }
 
 
@@ -65,12 +66,10 @@ public class MyFragment extends Fragment {
     }
 
 
-    @OnClick({R.id.bt_fragment_register, R.id.profile_image, R.id.bt_fragment_login, R.id.ll_login_re, R.id.textView, R.id.tv_share, R.id.tv_feed_back, R.id.tv_about_us, R.id.bt_fragment_setup})
+    @OnClick({ R.id.profile_image, R.id.bt_fragment_login, R.id.ll_login_re, R.id.textView, R.id.tv_share, R.id.tv_feed_back, R.id.tv_about_us, R.id.bt_fragment_setup})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.bt_fragment_register:
-               startActivity(new Intent(view.getContext(), RegisterActivity.class));
-                break;
+
             case R.id.profile_image:
                 break;
             case R.id.bt_fragment_login:
@@ -96,7 +95,7 @@ public class MyFragment extends Fragment {
     private void showAppInfo() {
         AlertDialog.Builder builer = new AlertDialog.Builder(getActivity())
                 .setTitle("关于我们")
-                .setMessage("开发人:DARKER\n地址:http://docs.bmob.cn/data/Android/b_developdoc/doc/index.html#批量数据操作")
+                .setMessage("开发人:DARKER\n地址:https://github.com/dark7510/AndroidBend")
                 .setPositiveButton("确定",null);
         builer.create().show();
     }

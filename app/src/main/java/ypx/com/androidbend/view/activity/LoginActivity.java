@@ -16,6 +16,7 @@ import java.util.HashMap;
 
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
+
 import cn.bmob.v3.listener.SaveListener;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
@@ -114,14 +115,38 @@ public class LoginActivity extends AppCompatActivity implements PlatformActionLi
 
     private void loginByQQ() {
         Platform qq = ShareSDK.getPlatform(QQ.NAME);
-        qq.setPlatformActionListener(this);
-        //authorize与showUser单独调用一个即可
-        qq.authorize();//单独授权,OnComplete返回的hashmap是空的
-        //qq.showUser(null);//授权并获取用户信息
-        //移除授权
-        //qq.removeAccount(true);
-    }
+        //回调信息，可以在这里获取基本的授权返回的信息，但是注意如果做提示和UI操作要传到主线程handler里去执行
+        qq.setPlatformActionListener(new PlatformActionListener() {
 
+            @Override
+            public void onError(Platform arg0, int arg1, Throwable arg2) {
+                // TODO Auto-generated method stub
+                arg2.printStackTrace();
+            }
+
+            @Override
+            public void onComplete(Platform arg0, int arg1, HashMap<String, Object> arg2) {
+                // TODO Auto-generated method stub
+                //输出所有授权信息
+                PlatformDb data = arg0.getDb();
+                BmobUser.BmobThirdUserAuth authInfo = new BmobUser.BmobThirdUserAuth("qq"
+                        , data.getToken(), String.valueOf(data.getExpiresIn()), data.getUserId());
+                loginWithAuth(authInfo, data);
+            }
+
+            @Override
+            public void onCancel(Platform arg0, int arg1) {
+                // TODO Auto-generated method stub
+            }
+        });
+        //authorize与showUser单独调用一个即可
+        //weibo.authorize();//单独授权,OnComplete返回的hashmap是空的
+        qq.showUser(null);//授权并获取用户信息
+    }
+    public void loginWithAuth(final BmobUser.BmobThirdUserAuth authInfo, final PlatformDb data) {
+
+
+    }
 
     public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
         Looper.prepare();
@@ -138,6 +163,7 @@ public class LoginActivity extends AppCompatActivity implements PlatformActionLi
         String nickname=userDB.getUserName();
         Looper.loop();
     }
+
 
 
     public void onError(Platform platform, int i, Throwable throwable) {
